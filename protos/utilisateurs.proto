@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package utilisateurs;
+
+service UtilisateursService {
+  rpc GetUtilisateur (UtilisateurRequest) returns (UtilisateurResponse);
+  rpc ListUtilisateurs (Empty) returns (ListUtilisateursResponse);
+  rpc CreateUtilisateur (CreateUtilisateurRequest) returns (UtilisateurResponse);
+}
+
+message Empty {}
+
+message UtilisateurRequest {
+  int32 id = 1;
+}
+
+message UtilisateurResponse {
+  int32 id = 1;
+  string nom = 2;
+  string email = 3;
+}
+
+message ListUtilisateursResponse {
+  repeated UtilisateurResponse utilisateurs = 1;
+}
+
+message CreateUtilisateurRequest {
+  string nom = 1;
+  string email = 2;
+}

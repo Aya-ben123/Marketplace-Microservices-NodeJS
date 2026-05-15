@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package commandes;
+
+service CommandesService {
+  rpc GetCommande (CommandeRequest) returns (CommandeResponse);
+  rpc ListCommandes (Empty) returns (ListCommandesResponse);
+  rpc CreateCommande (CreateCommandeRequest) returns (CommandeResponse);
+}
+
+message Empty {}
+
+message CommandeRequest {
+  int32 id = 1;
+}
+
+message CommandeResponse {
+  int32 id = 1;
+  int32 utilisateur_id = 2;
+  string produit_id = 3;
+  int32 quantite = 4;
+  string statut = 5;
+}
+
+message ListCommandesResponse {
+  repeated CommandeResponse commandes = 1;
+}
+
+message CreateCommandeRequest {
+  int32 utilisateur_id = 1;
+  string produit_id = 2;
+  int32 quantite = 3;
+}
