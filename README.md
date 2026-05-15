@@ -8,7 +8,7 @@ marketplace/
 ├── service-produits/        # gRPC :50051 | DB: JSON (RxDB-like) | Kafka Consumer
 ├── service-commandes/       # gRPC :50052 | DB: SQLite3 | Kafka Producer
 ├── service-utilisateurs/    # gRPC :50053 | DB: SQLite3
-└── gateway/                 # REST + GraphQL sur :3000
+└── gateway/                 # REST sur :3000 | GraphQL sur :4000
 ```
 
 ## Installation
